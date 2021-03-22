@@ -13,13 +13,4 @@ public class CharContainsOperation {
         }
             return c;
     }
-
-    public static void main(String[] args) {
-        String ha = "VI + V";
-
-        String res = containsOperaionsString(ha);
-        System.out.println(res);
-
-    }
-
 }
