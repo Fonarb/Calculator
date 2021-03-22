@@ -24,10 +24,10 @@ public class ResultOfExpr {
         }
         return result;
     }
-    public int result (int a, int b, String[] c){
+    public int result (int a, int b, String c ){
 
         int result = 0;
-        switch (c[1]){
+        switch (c){
 
             case "+" :  result = additionStrategy.result(a,b);
                 break;
@@ -37,7 +37,7 @@ public class ResultOfExpr {
                 break;
             case "/" : result = divisionStrategy.result(a,b);
                 break;
-            default: throw new IllegalArgumentException("Неверный знак операции");
+            default: throw new IllegalArgumentException("Неверный знак операции в римских цифрах");
         }
         return result;
     }

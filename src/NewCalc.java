@@ -1,3 +1,4 @@
+import com.company.strategy.CharContainsOperation;
 import com.company.strategy.ResultOfExpr;
 
 import java.util.Scanner;
@@ -22,13 +23,19 @@ public class NewCalc  {
             System.out.println(resultOfExpr.result(calc.arr));
         }else if(equalsRoman(string)){
             String replace = string.replaceAll(" ","");
-            String [] tempArr = replace.split("");
+
+
+
+
+            String op = CharContainsOperation.containsOperaionsString(replace);
+            //String [] tempArr = replace.split("[+-/*]}");
             calc.arr = replace.split("[+-/*]");
 
-            int a = num1IntegerFromRoman(calc.arr);
-            int b = num2IntegerFromRoman(calc.arr);
-            int ress =(resultOfExpr.result(a,b, tempArr));
+
+            int a = num1IntegerFromRoman(calc.arr);  //(calc.arr)
+            int b = num2IntegerFromRoman(calc.arr);  //(calc.arr)
+            int ress =(resultOfExpr.result(a,b, op));
             System.out.println(romanValueToArabValue(ress));
-        }
+        }else throw new RuntimeException("Неверный формат чисел");
     }
 }
